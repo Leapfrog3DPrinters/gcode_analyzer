@@ -150,6 +150,6 @@ void gcode_free(Gcode *g)
 {
     free(g->parse_start);
     free(g->parse_stop);
-    free(g->options);
+    options_free(g->options);
     free(g);
 }

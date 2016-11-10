@@ -31,6 +31,7 @@ static void output_json(Gcode *g) {
     json_object_set(output, "feedrate", json_real(g->feedrate));
     json_object_set(output, "filament_diameter", json_real(g->filamentDiameter));
     json_object_set(output, "total_move_time_hours", json_real(g->totalMoveTimeMinute / 60.0));
+    json_object_set(output, "coordinates_to_ignore", json_integer(g->options->ignores_set));
 
     // Information about the gcode object:
     pa = gcode_printing_area(g);
